@@ -8,8 +8,12 @@ public class Agios {
     }
     public static double CalculAgios(double overdraft, int dayOfOverdraft) {
         double amountOfAgios = (overdraft * dayOfOverdraft * 0.1) / 365;
-        System.out.println("Overcraft : " + overdraft + " and Number of day of overdraft : " + dayOfOverdraft + ".");
-        System.out.printf("The client will have to pay %.2f € to the bank for %d day of overdraft.\n", amountOfAgios, dayOfOverdraft);
+        if(overdraft == 0){
+            System.out.printf("The client won't have any agios since no overdraft");
+        } else {
+            System.out.println("Overcraft : " + overdraft + " and Number of day of overdraft : " + dayOfOverdraft + ".");
+            System.out.printf("The client will have to pay %.2f € to the bank for %d day of overdraft.\n", amountOfAgios, dayOfOverdraft);
+        }
         return amountOfAgios;
     }
 }
