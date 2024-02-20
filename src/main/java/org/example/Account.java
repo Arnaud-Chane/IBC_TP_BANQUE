@@ -1,55 +1,55 @@
 package org.example;
 
-public class Account()
+public class Account
 {
-    private string _nom = "";
-    private string _prenom = "";
-    private bool _decouvert = false;
-    private double _montantDecouvert = 0;
-    private double _montantInitialDepot = 0;
+    private String Nom;
+    private String Prenom;
+    private boolean Decouvert;
+    private double MontantDecouvert;
+    private double MontantInitialDepot;
 
 
-    public string getNom() {
-        return _nom;
+    public String getNom() {
+        return Nom;
     }
  
-    public string setNom(string nom) {
-        this._nom = nom;
+    public void setNom(String nom) {
+        Nom = nom;
     }
 
-    public string getPrenom() {
-        return _prenom;
+    public String getPrenom() {
+        return Prenom;
     }
  
-    public string setPrenom(string prenom) {
-        this._prenom = prenom;
+    public void setPrenom(String prenom) {
+        Prenom = prenom;
     }
 
 
-    public bool getDecouvert() {
-        return _decouvert;
+    public boolean getDecouvert() {
+        return Decouvert;
     }
  
-    public bool setDecouvert(int decouvert) {
-        this._decouvert = decouvert;
+    public void setDecouvert(boolean decouvert) {
+        Decouvert = decouvert;
     }
 
 
     public double getMontantDecouvert() {
-        return _montantdecouvert;
+        return MontantDecouvert;
     }
  
     public void setMontantDecouvert(double montantDecouvert) {
-        this._montantDecouvert = montantDecouvert;
+        MontantDecouvert = montantDecouvert;
     }
 
 
     public double getMontantInitialDepot() {
-        return _montantInitialDepot;
+        return MontantInitialDepot;
     }
  
     public void setMontantInitialDepot(double montantInitialDepot) {
-        this._montantInitialDepot = montantInitialDepot;
+        MontantInitialDepot = montantInitialDepot;
     }
 
 }
