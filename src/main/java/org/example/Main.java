@@ -22,16 +22,16 @@ public class Main {
         
         System.out.println("Voulez-vous avoir un découvert ? taper O pour oui, tout autre caractère pour non");
         String Decouvert = scan.next();
-        if(Decouvert == "O")
+        if("O" == Decouvert.intern() )
         {
             bDecouvert = true;
         }
 
         if(bDecouvert)
         {
-            tempDecouvert = scan.nextDouble(); 
             do {
                 System.out.println("Entrez le montant du découvert (doit être compris entre 100 et 2000 €): ");
+                tempDecouvert = scan.nextDouble(); 
                 if( tempDecouvert >= 100 || tempDecouvert <= 2000)
                 {
                     myMontantDecouvert = scan.nextDouble();
@@ -42,8 +42,8 @@ public class Main {
 
 
         do {
-            tempInitial = scan.nextDouble();
             System.out.println("Montant d'ouverture de compte minimum de 500 €: ");
+            tempInitial = scan.nextDouble();
             if( tempInitial > 500)
             {
                 myMontantInitial = tempInitial;
