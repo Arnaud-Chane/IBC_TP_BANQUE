@@ -29,16 +29,35 @@ public class Withdraw {
             if (solde - retrait >= -decouvertAutorise) {
                 // Effectuer le retrait
                 solde -= retrait;
-                System.out.println("Retrait effectué. Nouveau solde : " + solde);
+                System.out.println("Retrait effectué. Nouveau solde : " + solde + "€");
             } else {
-                System.out.println("Solde insuffisant. Nouveau solde : " + solde);
+                System.out.println(" !!! Solde insuffisant.");
+                System.out.println("     Solde actuel : " + solde + "€");
+                System.out.println("     Découvert autorisé : " + decouvertAutorise + "€");
+
+                String retraitMaxOverdraft;
+                
+                do {
+                    System.out.println("Voulez-vous retirer : " + (solde + decouvertAutorise) + "€ ? O/N");
+                    retraitMaxOverdraft = scanner.next();
+                
+                    if (retraitMaxOverdraft.toLowerCase().equals("n")) {
+                        break;  // Sortir de la boucle si l'utilisateur entre "n"
+                    }
+                } while (!retraitMaxOverdraft.toLowerCase().equals("o"));
+                
+                if (retraitMaxOverdraft.toLowerCase().equals("o")) {
+                    // Mettre le solde au montant du découvert autorisé en cas de retrait maximal
+                    solde = -decouvertAutorise;
+                    break;
+                }
             }
         }
 
 
         // Afficher le nouveau solde et le montant du découvert
-        System.out.println("Opérations terminées. Nouveau solde : " + solde);
-        System.out.println("Montant du découvert : " + decouvertAutorise);
+        System.out.println("Opérations terminées.");
+        System.out.println("Nouveau solde : " + solde + "€");
 
 
 
