@@ -42,7 +42,12 @@ public class Withdraw {
 
         // Fermer le scanner
         scanner.close();
-        overdraftAmount = decouvertAutorise - solde;
+
+        if(solde == decouvertAutorise){
+            overdraftAmount = decouvertAutorise;
+        } else {
+            overdraftAmount = -(solde);
+        }
         return overdraftAmount;
     }
 }
