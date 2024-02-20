@@ -6,6 +6,6 @@ public class Main {
     public static void main(String[] args) {
         WithdrawOperation();
         DisplayAgios();
-        CalculAgios(overdraftAmount, 25);
+        CalculAgios(overdraftAmount);
     }
 }

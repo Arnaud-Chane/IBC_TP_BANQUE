@@ -40,8 +40,7 @@ public class Withdraw {
         System.out.println("Opérations terminées. Nouveau solde : " + solde);
         System.out.println("Montant du découvert : " + decouvertAutorise);
 
-        // Fermer le scanner
-        scanner.close();
+
 
         if(solde < 0){
             overdraftAmount = -(solde);
