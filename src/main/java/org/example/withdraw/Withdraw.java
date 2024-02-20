@@ -2,7 +2,8 @@ package org.example.withdraw;
 import java.util.Scanner;
 
 public class Withdraw {
-    public static void WithdrawOperation() {
+    public static double overdraftAmount;
+    public static double WithdrawOperation() {
         Scanner scanner = new Scanner(System.in);
 
         // Demander le montant du découvert autorisé
@@ -34,11 +35,14 @@ public class Withdraw {
             }
         }
 
+
         // Afficher le nouveau solde et le montant du découvert
         System.out.println("Opérations terminées. Nouveau solde : " + solde);
         System.out.println("Montant du découvert : " + decouvertAutorise);
 
         // Fermer le scanner
         scanner.close();
+        overdraftAmount = decouvertAutorise - solde;
+        return overdraftAmount;
     }
 }
