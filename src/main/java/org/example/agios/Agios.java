@@ -9,6 +9,10 @@ public class Agios {
     }
 
     public static double CalculAgios(double overdraft) {
+        if(overdraft == 0){
+            System.out.print("The client won't have any agios since no overdraft");
+            return overdraft;
+        }
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter the number of days of overdraft:");
         while (!scanner.hasNextDouble()) {
@@ -16,14 +20,11 @@ public class Agios {
             scanner.next(); // discard the non-double input
         }
         double dayOfOverdraft = scanner.nextDouble();
-
         double amountOfAgios = (overdraft * dayOfOverdraft * 0.1) / 365;
-        if(overdraft == 0){
-            System.out.print("The client won't have any agios since no overdraft");
-        } else {
-            System.out.println("Overdraft : " + overdraft + " and Number of day of overdraft : " + (int)dayOfOverdraft + ".");
-            System.out.printf("The client will have to pay %.2f € to the bank for %d day of overdraft.\n", amountOfAgios, (int)dayOfOverdraft);
-        }
+
+        System.out.println("Overdraft : " + overdraft + " and Number of day of overdraft : " + (int)dayOfOverdraft + ".");
+        System.out.printf("The client will have to pay %.2f € to the bank for %d day of overdraft.\n", amountOfAgios, (int)dayOfOverdraft);
+
         return amountOfAgios;
     }
 }
