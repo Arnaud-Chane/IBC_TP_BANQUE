@@ -6,6 +6,11 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         
+        NewAccount();
+    }
+
+    public static void NewAccount()
+    {
         boolean bDecouvert = false;
         double tempDecouvert = 0;
         double myMontantDecouvert = 0;
@@ -22,7 +27,7 @@ public class Main {
         
         System.out.println("Voulez-vous avoir un découvert ? taper O pour oui, tout autre caractère pour non");
         String Decouvert = scan.next();
-        if("O" == Decouvert.intern() )
+        if("O" == Decouvert.intern() || "o" == Decouvert.intern())
         {
             bDecouvert = true;
         }
@@ -32,9 +37,9 @@ public class Main {
             do {
                 System.out.println("Entrez le montant du découvert (doit être compris entre 100 et 2000 €): ");
                 tempDecouvert = scan.nextDouble(); 
-                if( tempDecouvert >= 100 || tempDecouvert <= 2000)
+                if( tempDecouvert >= 100 && tempDecouvert <= 2000)
                 {
-                    myMontantDecouvert = scan.nextDouble();
+                    myMontantDecouvert = tempDecouvert;
                     break;
                 }
             } while(tempDecouvert < 100 || tempDecouvert > 2000);
@@ -51,12 +56,11 @@ public class Main {
             }
         } while(tempInitial < 500);
 
+
         Account acc = CreateNewAccount(myName, myFirstName, bDecouvert, myMontantDecouvert, myMontantInitial);
 
         scan.close();
     }
-
-
     
     public static Account CreateNewAccount(String sName, String sFirstName, boolean bDecouvert, double iMontantDecouvert, double iMontantInitialDepot)
     {
