@@ -6,10 +6,10 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         
-        NewAccount();
+        Account myAccount = NewAccount();
     }
 
-    public static void NewAccount()
+    public static Account NewAccount()
     {
         boolean bDecouvert = false;
         double tempDecouvert = 0;
@@ -60,6 +60,8 @@ public class Main {
         Account acc = CreateNewAccount(myName, myFirstName, bDecouvert, myMontantDecouvert, myMontantInitial);
 
         scan.close();
+
+        return acc;
     }
     
     public static Account CreateNewAccount(String sName, String sFirstName, boolean bDecouvert, double iMontantDecouvert, double iMontantInitialDepot)
