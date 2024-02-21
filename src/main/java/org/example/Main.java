@@ -12,7 +12,8 @@ import static org.example.account.CreateAccount.NewAccount;
 public class Main {
     public static void main(String[] args) {
         Account myAccount = NewAccount();
-        WithdrawOperation();
+
+        WithdrawOperation(myAccount.getMontantDecouvert(), myAccount.getMontantInitialDepot());
         DisplayAgios();
         CalculAgios(overdraftAmount);
     }

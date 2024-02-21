@@ -45,7 +45,7 @@ public class CreateAccount {
         do {
             System.out.println("Montant d'ouverture de compte minimum de 500 €: ");
             tempInitial = scan.nextDouble();
-            if( tempInitial > 500)
+            if( tempInitial >= 500)
             {
                 myMontantInitial = tempInitial;
                 break;

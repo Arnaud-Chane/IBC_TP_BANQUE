@@ -3,16 +3,16 @@ import java.util.Scanner;
 
 public class Withdraw {
     public static double overdraftAmount;
-    public static double WithdrawOperation() {
+    public static double WithdrawOperation(double decouvertAutorised, double solded) {
         Scanner scanner = new Scanner(System.in);
 
-        // Demander le montant du découvert autorisé
-        System.out.print("Entrez le montant du découvert autorisé (0 s'il n'y en a pas) : ");
-        double decouvertAutorise = scanner.nextDouble();
-
-        // Demander le solde en cours
-        System.out.print("Entrez le solde en cours : ");
-        double solde = scanner.nextDouble();
+//        // Demander le montant du découvert autorisé
+//        System.out.print("Entrez le montant du découvert autorisé (0 s'il n'y en a pas) : ");
+        double decouvertAutorise = decouvertAutorised;
+//
+//        // Demander le solde en cours
+//        System.out.print("Entrez le solde en cours : ");
+        double solde = solded;
 
         // Tant que le solde le permet, demander au client s'il souhaite effectuer un autre retrait
         while (true) {
